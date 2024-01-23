@@ -88,5 +88,6 @@ onLoop(({ delta, elapsed }) => {
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
+  width: 20rem;
 }
 </style>
