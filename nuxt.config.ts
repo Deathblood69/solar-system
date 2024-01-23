@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   modules: [
+    "@tresjs/nuxt",
     "@pinia/nuxt",
     "@nuxt/test-utils/module",
     async (_options: {}, nuxt: Record<string, any>) => {

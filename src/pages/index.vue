@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ShowScene from "~/domains/scene/ShowThreeScene.vue";
+
 /**  PROPS  **/
 
 /**  EMITS  **/
@@ -13,7 +15,7 @@
 </script>
 
 <template>
-  <div class="container">Accueil</div>
+  <div class="container"><ShowScene /></div>
 </template>
 
 <style scoped>
