@@ -39,6 +39,7 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
+    "@tresjs/cientos": "^3.7.0",
     "@tresjs/nuxt": "^2.0.1",
     "@types/lodash": "^4.14.202",
     "date-fns": "^3.3.1",
