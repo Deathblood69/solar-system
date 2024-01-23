@@ -39,18 +39,21 @@ onLoop(({ delta, elapsed }) => {
   <div id="options">
     <VCard>
       <VCardText>
-        <code> Temps écoulé: {{ lastElapsedTime.toFixed(0) }} </code>
+        <code> Temps écoulé: {{ lastElapsedTime.toFixed(0) }} seconde(s) </code>
       </VCardText>
     </VCard>
-    <AppForm
+
+    <AppAccordeon
       v-for="celestialBody in celestialBodies"
       :title="celestialBody.name"
     >
-      <FormCelestialBody :model-value="celestialBody" />
-      <template #actions>
-        <div />
-      </template>
-    </AppForm>
+      <AppForm>
+        <FormCelestialBody :model-value="celestialBody" />
+        <template #actions>
+          <div />
+        </template>
+      </AppForm>
+    </AppAccordeon>
   </div>
 
   <AppThreeScene>

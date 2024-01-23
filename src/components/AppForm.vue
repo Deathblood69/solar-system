@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 /** PROPS **/
 interface Props {
-  title: string;
+  title?: string;
   subtitle?: string;
   loading?: boolean;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   loading: false,
   subtitle: "",
 });
@@ -37,18 +37,18 @@ async function handleValidate() {
 </script>
 
 <template>
-  <VCard :loading="loading" :subtitle="subtitle" :title="title">
-    <VCardText>
+  <div :title="title">
+    <div>
       <VForm ref="form" :disabled="loading || afterClickLoading">
         <slot />
       </VForm>
-    </VCardText>
+    </div>
     <slot
       name="actions"
       :validate="handleValidate"
       :loading="afterClickLoading"
     >
-      <VCardActions class="pa-4">
+      <div>
         <VBtn @click="emit('cancel')">Annuler</VBtn>
         <VBtn
           :loading="afterClickLoading"
@@ -57,7 +57,7 @@ async function handleValidate() {
           @click="handleValidate"
           >Valider
         </VBtn>
-      </VCardActions>
+      </div>
     </slot>
-  </VCard>
+  </div>
 </template>
